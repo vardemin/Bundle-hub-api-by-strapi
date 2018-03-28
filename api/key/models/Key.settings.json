@@ -1,0 +1,23 @@
+{
+  "connection": "default",
+  "collectionName": "key",
+  "info": {
+    "name": "key",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "key": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "multiple": false
+    },
+    "_source": {
+      "model": "source",
+      "via": "keys"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/bundle",
+      "handler": "Bundle.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/bundle/:_id",
+      "handler": "Bundle.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/bundle",
+      "handler": "Bundle.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/bundle/:_id",
+      "handler": "Bundle.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/bundle/:_id",
+      "handler": "Bundle.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

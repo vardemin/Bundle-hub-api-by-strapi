@@ -1,0 +1,69 @@
+{
+  "connection": "default",
+  "collectionName": "game",
+  "info": {
+    "name": "game",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "maxLength": 127,
+      "multiple": false,
+      "minLength": 3,
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "multiple": false
+    },
+    "avatar": {
+      "type": "string",
+      "required": true,
+      "multiple": false
+    },
+    "developer": {
+      "type": "string",
+      "required": true,
+      "multiple": false
+    },
+    "url": {
+      "type": "string",
+      "required": true,
+      "multiple": false
+    },
+    "price": {
+      "type": "decimal",
+      "required": true,
+      "multiple": false
+    },
+    "genre": {
+      "type": "string",
+      "multiple": false
+    },
+    "achievements": {
+      "type": "boolean",
+      "multiple": false
+    },
+    "trading_cards": {
+      "type": "boolean",
+      "multiple": false
+    },
+    "bundles_games": {
+      "collection": "bundle",
+      "via": "games"
+    },
+    "packs_games": {
+      "collection": "pack",
+      "via": "game"
+    },
+    "source": {
+      "model": "source",
+      "via": "game"
+    }
+  }
+}

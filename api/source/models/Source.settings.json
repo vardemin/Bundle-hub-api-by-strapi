@@ -1,0 +1,28 @@
+{
+  "connection": "default",
+  "collectionName": "source",
+  "info": {
+    "name": "source",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "game": {
+      "model": "game",
+      "via": "source",
+      "dominant": true
+    },
+    "txt": {
+      "type": "text",
+      "required": true,
+      "multiple": false
+    },
+    "keys": {
+      "collection": "key",
+      "via": "_source",
+      "plugin": ""
+    }
+  }
+}

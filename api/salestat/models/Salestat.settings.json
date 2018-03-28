@@ -1,0 +1,34 @@
+{
+  "connection": "default",
+  "collectionName": "salestat",
+  "info": {
+    "name": "salestat",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "multiple": false
+    },
+    "units_sold": {
+      "type": "integer",
+      "multiple": false
+    },
+    "views": {
+      "type": "integer",
+      "multiple": false
+    },
+    "money_earned": {
+      "type": "decimal",
+      "multiple": false
+    },
+    "bundle_stat": {
+      "model": "bundle",
+      "via": "statistics"
+    }
+  }
+}

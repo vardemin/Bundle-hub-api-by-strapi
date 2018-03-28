@@ -1,0 +1,44 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/salestat",
+      "handler": "Salestat.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/salestat/:_id",
+      "handler": "Salestat.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/salestat",
+      "handler": "Salestat.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/salestat/:_id",
+      "handler": "Salestat.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/salestat/:_id",
+      "handler": "Salestat.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

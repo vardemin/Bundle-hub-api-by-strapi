@@ -1,0 +1,44 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/key",
+      "handler": "Key.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/key/:_id",
+      "handler": "Key.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/key",
+      "handler": "Key.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/key/:_id",
+      "handler": "Key.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/key/:_id",
+      "handler": "Key.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

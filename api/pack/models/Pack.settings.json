@@ -1,0 +1,23 @@
+{
+  "connection": "default",
+  "collectionName": "pack",
+  "info": {
+    "name": "pack",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "game": {
+      "collection": "game",
+      "via": "packs_games",
+      "dominant": true
+    },
+    "keys": {
+      "type": "text",
+      "required": true,
+      "multiple": false
+    }
+  }
+}

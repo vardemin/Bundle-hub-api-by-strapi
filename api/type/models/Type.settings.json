@@ -1,0 +1,43 @@
+{
+  "connection": "default",
+  "collectionName": "type",
+  "info": {
+    "name": "type",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "multiple": false
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "multiple": false
+    },
+    "color_solid": {
+      "type": "string",
+      "required": true,
+      "multiple": false
+    },
+    "color_neon": {
+      "type": "string",
+      "required": true,
+      "multiple": false
+    },
+    "icon": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "bundles_type": {
+      "collection": "bundle",
+      "via": "type"
+    }
+  }
+}

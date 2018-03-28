@@ -1,0 +1,57 @@
+{
+  "connection": "default",
+  "collectionName": "bundle",
+  "info": {
+    "name": "bundle",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "multiple": false
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "multiple": false
+    },
+    "price": {
+      "type": "decimal",
+      "required": true,
+      "multiple": false
+    },
+    "start": {
+      "type": "date",
+      "required": true,
+      "multiple": false
+    },
+    "finish": {
+      "type": "date",
+      "required": true,
+      "multiple": false
+    },
+    "games": {
+      "collection": "game",
+      "via": "bundles_games",
+      "dominant": true
+    },
+    "type": {
+      "model": "type",
+      "via": "bundles_type"
+    },
+    "statistics": {
+      "model": "salestat",
+      "via": "bundle_stat"
+    },
+    "icon": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    }
+  }
+}

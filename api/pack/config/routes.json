@@ -1,0 +1,44 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/pack",
+      "handler": "Pack.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/pack/:_id",
+      "handler": "Pack.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/pack",
+      "handler": "Pack.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/pack/:_id",
+      "handler": "Pack.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/pack/:_id",
+      "handler": "Pack.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
