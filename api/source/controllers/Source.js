@@ -5,8 +5,35 @@
  *
  * @description: A set of functions called "actions" for managing `Source`.
  */
+const _ = require('lodash');
 
 module.exports = {
+
+  load: async (ctx) => {
+    console.log(ctx.request.body.files);
+
+    // Transform stream files to buffer
+    const buffers = await strapi.plugins.upload.services.upload.bufferize(ctx.request.body.files);
+    const enhancedFiles = buffers.map(file => {
+        if (file.size > config.sizeLimit) {
+          return ctx.badRequest(null, ctx.request.admin ? [{ messages: [{ id: 'Upload.status.sizeLimit', values: {file: file.name} }] }] : `${file.name} file is bigger than limit size!`);
+        }
+
+        // Add details to the file to be able to create the relationships.
+        if (refId && ref && field) {
+          Object.assign(file, {
+            related: [{
+              refId,
+              ref,
+              source,
+              field
+            }]
+          });
+        }
+
+        return file;
+      });
+  },
 
   /**
    * Retrieve source records.

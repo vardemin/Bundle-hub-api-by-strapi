@@ -25,6 +25,14 @@
       }
     },
     {
+      "method": "POST",
+      "path": "/source/load",
+      "handler": "Source.load",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "PUT",
       "path": "/source/:_id",
       "handler": "Source.update",

@@ -15,8 +15,13 @@
       "unique": true,
       "multiple": false
     },
-    "_source": {
+    "source": {
       "model": "source",
+      "via": "keys",
+      "private": true
+    },
+    "pack": {
+      "model": "pack",
       "via": "keys"
     }
   }

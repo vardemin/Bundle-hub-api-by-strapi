@@ -20,11 +20,6 @@
       "required": true,
       "multiple": false
     },
-    "price": {
-      "type": "decimal",
-      "required": true,
-      "multiple": false
-    },
     "start": {
       "type": "date",
       "required": true,
@@ -52,6 +47,22 @@
       "model": "file",
       "via": "related",
       "plugin": "upload"
+    },
+    "price_1": {
+      "type": "decimal",
+      "multiple": false
+    },
+    "price_10": {
+      "type": "decimal",
+      "multiple": false
+    },
+    "price_25": {
+      "type": "decimal",
+      "multiple": false
+    },
+    "price_50": {
+      "type": "decimal",
+      "multiple": false
     }
   }
 }

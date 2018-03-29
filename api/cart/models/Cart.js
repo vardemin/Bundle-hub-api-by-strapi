@@ -1,37 +1,17 @@
 'use strict';
+
 /**
- * Lifecycle callbacks for the `Source` model.
+ * Lifecycle callbacks for the `Cart` model.
  */
 
 module.exports = {
   // Before saving a value.
   // Fired before an `insert` or `update` query.
-  beforeSave: async (model) => {
-    console.log(model);
-  },
+  // beforeSave: async (model) => {},
 
   // After saving a value.
   // Fired after an `insert` or `update` query.
-  afterSave: async (model, result) => {
-    var fetchUrl = require("fetch").fetchUrl;
-    var _ = require('lodash');
-    await fetchUrl(model.url, function (error, meta, body) {
-      if (!error && meta.status == 200) {
-        var txt = body;
-        var lines = txt.toString().split('\n');
-        model.keys = [];
-        for(var line = 0; line < lines.length; line++){
-          if (!_.isEmpty(lines[line])) {
-            strapi.log.info(lines[line]);
-            console.log(model);
-            const data = strapi.services.key.add({"key": lines[line], "source": model.id});
-            
-            model.keys.push(data._id);
-          }
-        }
-      }
-    });
-  },
+  // afterSave: async (model, result) => {},
 
   // Before fetching all values.
   // Fired before a `fetchAll` operation.

@@ -59,11 +59,12 @@
     },
     "packs_games": {
       "collection": "pack",
-      "via": "game"
+      "via": "games"
     },
     "source": {
       "model": "source",
-      "via": "game"
+      "via": "game",
+      "private": true
     }
   }
 }

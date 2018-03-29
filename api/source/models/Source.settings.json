@@ -14,15 +14,13 @@
       "via": "source",
       "dominant": true
     },
-    "txt": {
-      "type": "text",
-      "required": true,
-      "multiple": false
-    },
     "keys": {
       "collection": "key",
-      "via": "_source",
-      "plugin": ""
+      "via": "source"
+    },
+    "url": {
+      "type": "string",
+      "multiple": false
     }
   }
 }
