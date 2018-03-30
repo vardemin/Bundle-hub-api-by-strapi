@@ -39,6 +39,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "POST",
+      "path": "/bundle/buy",
+      "handler": "Bundle.buy",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

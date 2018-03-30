@@ -39,9 +39,9 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "cart": {
-      "model": "cart",
-      "via": "user"
+    "packs_user": {
+      "collection": "pack",
+      "via": "user_packs"
     }
   }
 }

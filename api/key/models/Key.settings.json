@@ -17,12 +17,23 @@
     },
     "source": {
       "model": "source",
-      "via": "keys",
-      "private": true
-    },
-    "pack": {
-      "model": "pack",
       "via": "keys"
+    },
+    "pack_keys": {
+      "model": "pack",
+      "via": "keys_pack"
+    },
+    "purchased": {
+      "type": "boolean",
+      "multiple": false
+    },
+    "purchasedAt": {
+      "type": "date",
+      "multiple": false
+    },
+    "_game": {
+      "model": "game",
+      "via": "_keys"
     }
   }
 }

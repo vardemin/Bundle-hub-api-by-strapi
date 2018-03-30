@@ -55,15 +55,21 @@
     },
     "bundles_games": {
       "collection": "bundle",
-      "via": "games"
-    },
-    "packs_games": {
-      "collection": "pack",
-      "via": "games"
+      "via": "games",
+      "private": true
     },
     "source": {
       "model": "source",
       "via": "game",
+      "private": true
+    },
+    "packs_game": {
+      "collection": "pack",
+      "via": "game"
+    },
+    "_keys": {
+      "collection": "key",
+      "via": "_game",
       "private": true
     }
   }

@@ -6,13 +6,15 @@
 module.exports = {
   // Before saving a value.
   // Fired before an `insert` or `update` query.
-  beforeSave: async (model) => {
-    console.log(model);
-  },
+  // beforeSave: async (model, attrs, options) => {
+  //   console.log(model);
+  //   console.log(attrs);
+  //   console.log(options);
+  // },
 
   // After saving a value.
   // Fired after an `insert` or `update` query.
-  afterSave: async (model, result) => {
+  afterSave: async (model, result, options) => {
     var fetchUrl = require("fetch").fetchUrl;
     var _ = require('lodash');
     await fetchUrl(model.url, function (error, meta, body) {
@@ -23,7 +25,6 @@ module.exports = {
         for(var line = 0; line < lines.length; line++){
           if (!_.isEmpty(lines[line])) {
             strapi.log.info(lines[line]);
-            console.log(model);
             const data = strapi.services.key.add({"key": lines[line], "source": model.id});
             
             model.keys.push(data._id);

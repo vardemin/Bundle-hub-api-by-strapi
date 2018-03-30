@@ -9,22 +9,19 @@
     "timestamps": true
   },
   "attributes": {
-    "games": {
-      "collection": "game",
-      "via": "packs_games",
+    "game": {
+      "model": "game",
+      "via": "packs_game",
       "dominant": true
     },
-    "keys": {
+    "keys_pack": {
       "collection": "key",
-      "via": "pack"
+      "via": "pack_keys"
     },
-    "cart_packs": {
-      "model": "cart",
-      "via": "packs"
-    },
-    "price": {
-      "type": "decimal",
-      "multiple": false
+    "user_packs": {
+      "model": "user",
+      "via": "packs_user",
+      "plugin": "users-permissions"
     }
   }
 }
