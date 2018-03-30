@@ -91,19 +91,22 @@ module.exports = {
       var item = ctx.request.body.items[_item];
       console.log(item);
       const bundle = await strapi.services.bundle.fetch({"_id": item.id});
-      console.log("bundle.games");
-      console.log(bundle.games);
+
       for (var i = 0; i < bundle.games.length; i++) {
         var game = bundle.games[i];
-        console.log("game");
-        console.log(game);
-        if (!games.has(game)) {
-          games.add(game);
+        if (!games.has(game.id)) {
+          games.add(game.id);
           purchaseList.push({"game": game.id, "amount": item.amount});
         }
         else {
-          var purhcase = _.find(purchaseList, ['game', game.id]);
-          purchase.amount+= item.amount;
+          _.unionWith([{"game": game.id, "amount": item.amount}], purchaseList , function(objValue, srcValue){
+            if (objValue.game === srcValue.game) {
+              objValue.amount += srcValue.amount;
+              return true;
+            }
+            else return false;
+          })
+          console.log(purchaseList);
         }
       }
     }
@@ -119,8 +122,8 @@ module.exports = {
         console.log(keys);
         var date = new Date();
         for (var j = 0; j < keys.length; j++) {
-          strapi.services.key.edit({_id: keys[j].id},{purchased: true, purchasedAt: date});
-          keys[j].purchase = true;
+          //await strapi.services.key.edit({_id: keys[j].id},{purchased: true, purchasedAt: date});
+          keys[j].purchased = true;
           keys[j].purchasedAt = date;
         }
         pack.game = purchase.game;
